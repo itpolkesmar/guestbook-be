@@ -1,8 +1,12 @@
-import express from "express";
-import cors from "cors";
-import morgan from "morgan";
-import router from "./index.js";
+// import express from "express";
+// import cors from "cors";
+// import morgan from "morgan";
+// import router from "./index.js";
 
+const express = require("express");
+const cors = require("cors");
+const morgan = require("morgan");
+const router = require("./index");
 const app = express();
 
 app.use(morgan("dev"));

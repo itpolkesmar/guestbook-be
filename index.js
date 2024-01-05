@@ -1,9 +1,11 @@
-import express from "express"
-import guest from "./modules/guest/route.js"
+// import express from "express"
+// import guest from "./modules/guest/route.js"
 
-const router = express.Router()
+const express = require("express");
+const guest = require("./modules/guest/route.js");
 
-router.use('/guest', guest)
+const router = express.Router();
 
+router.use("/guest", guest);
 
-export default router
+export default router;
