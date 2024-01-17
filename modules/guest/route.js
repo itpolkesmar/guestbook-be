@@ -1,8 +1,8 @@
-// import express from "express"
-// import controller from "./controller.js"
+import express from "express"
+import controller from "./controller.js"
 
-const express = require("express");
-const constroller = require("./controller");
+// const express = require("express");
+// const constroller = require("./controller");
 
 const router = express.Router()
 
