@@ -9,13 +9,14 @@ const app = express();
 const cors = pkg;
 
 app.use(morgan("dev"));
-app.use(cors(corsOptions));
+
 var corsOptions = {
-  origin: '*',
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  allowedHeaders: ['Content-Type'],
+  origin: "*",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"],
   optionsSuccessStatus: 200,
 };
+app.use(cors(corsOptions));
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.json());
