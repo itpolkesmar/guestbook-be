@@ -7,8 +7,9 @@
   "scripts": {
     "postinstall": "prisma generate",
     "dev": "nodemon app.js",
-    "start": "node app.js"
-    
+    "start": "node app.js",
+    "vercel-build": "prisma generate && prisma migrate deploy && next build",
+    "prisma:generate": "prisma generate"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +24,8 @@
     "nodemon": "^3.0.2",
     "pg": "^8.11.3",
     "pg-hstore": "^2.3.4",
+    "prisma": "^5.8.1",
     "sequelize": "^6.35.2",
     "sqlite3": "^5.1.7-rc.0"
-  },
-  "devDependencies": {
-    "prisma": "^5.8.1"
   }
 }
