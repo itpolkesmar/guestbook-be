@@ -3,13 +3,14 @@ const prisma = new PrismaClient();
 
 class controller {
   static async addGuest(req, res, next) {
-    const { ingroup, visitors, purpose, to_meet, scheduled } = req.body;
+    const { name, ingroup, visitors, purpose, to_meet, scheduled } = req.body;
 
     const created_at = new Date().toISOString();
     const updated_at = created_at;
 
     const result = await prisma.guest.create({
       data: {
+        name,
         ingroup,
         visitors,
         purpose,
@@ -19,8 +20,6 @@ class controller {
         updated_at,
       },
     });
-
-    // console.log('ingroup:', ingroup)
 
     try {
       if (result) {

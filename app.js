@@ -25,8 +25,8 @@ app.get("/", async (req, res) => {
   res.send("ngapain kau hah?");
 });
 
-app.listen(8080, () =>
+app.listen(5000, () =>
   console.log(`
-🚀 Server ready at: http://localhost:8080
+🚀 Server ready at: http://localhost:5000
 ⭐️ See sample requests: http://pris.ly/e/js/rest-express#3-using-the-rest-api`)
 );

@@ -12,6 +12,7 @@ datasource db {
 
 model Guest {
   id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  name       String
   ingroup    Boolean  @default(false)
   visitors   Int
   purpose    String
