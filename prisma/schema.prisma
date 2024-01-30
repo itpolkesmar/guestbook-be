@@ -6,18 +6,19 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
 model Guest {
-  id         String   @id @default(auto()) @map("_id") @db.ObjectId
+  id         Int      @id @default(autoincrement())
   name       String
-  ingroup    Boolean  @default(false)
+  instansi   String
+  ingroup    String
   visitors   Int
   purpose    String
   to_meet    String
-  scheduled  Boolean  @default(false)
+  scheduled  String
   created_at DateTime
   updated_at DateTime
 }

@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE "Guest" ALTER COLUMN "ingroup" SET DATA TYPE TEXT,
+ALTER COLUMN "scheduled" SET DATA TYPE TEXT;
