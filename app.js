@@ -5,6 +5,9 @@ import express from "express";
 import pkg from "cors";
 import morgan from "morgan";
 import route from "./index.js";
+import 'dotenv/config'
+
+const port = process.env.PORT || 5000
 const app = express();
 const cors = pkg;
 
@@ -25,8 +28,9 @@ app.get("/", async (req, res) => {
   res.send("ngapain kau hah?");
 });
 
-app.listen(5000, () =>
+
+app.listen(port, () =>
   console.log(`
-🚀 Server ready at: http://localhost:5000
+🚀 Server ready at: http://localhost:${port}
 ⭐️ See sample requests: http://pris.ly/e/js/rest-express#3-using-the-rest-api`)
 );

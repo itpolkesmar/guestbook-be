@@ -31,6 +31,17 @@ class controller {
     }
     
   }
+
+  static async getGuest(req, res, next){
+    const result = await prisma.guest.findMany()
+
+    try {
+      res.status(201).json(result)
+    } catch (error) {
+      res.status(500).json(error)
+    }
+
+  }
 }
 
 export default controller;

@@ -7,5 +7,6 @@ import controller from "./controller.js"
 const router = express.Router()
 
 router.post('/addGuest', controller.addGuest)
+router.get('/getGuest', controller.getGuest)
 
 export default router
