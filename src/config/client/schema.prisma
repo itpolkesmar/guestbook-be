@@ -1,0 +1,25 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/config/client"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Guest {
+  id         Int      @id @default(autoincrement())
+  name       String
+  instansi   String
+  ingroup    String
+  visitors   Int
+  purpose    String
+  to_meet    String
+  scheduled  String
+  created_at DateTime
+  updated_at DateTime
+}
