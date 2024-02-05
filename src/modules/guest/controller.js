@@ -40,6 +40,10 @@ class controller {
       res.status(500).json(error);
     }
   }
+
+  static async getGuestById(req, res, next){
+    
+  }
 }
 
 export default controller;
