@@ -136,6 +136,10 @@ const config = {
         "fromEnvVar": null,
         "value": "windows",
         "native": true
+      },
+      {
+        "fromEnvVar": null,
+        "value": "linux-musl-openssl-3.0.x"
       }
     ],
     "previewFeatures": [],
@@ -161,8 +165,8 @@ const config = {
       }
     }
   },
-  "inlineSchema": "Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwNCi8vIGxlYXJuIG1vcmUgYWJvdXQgaXQgaW4gdGhlIGRvY3M6IGh0dHBzOi8vcHJpcy5seS9kL3ByaXNtYS1zY2hlbWENCg0KZ2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogIG91dHB1dCAgID0gIi4uL3NyYy9jb25maWcvY2xpZW50Ig0KfQ0KDQpkYXRhc291cmNlIGRiIHsNCiAgcHJvdmlkZXIgPSAicG9zdGdyZXNxbCINCiAgdXJsICAgICAgPSBlbnYoIkRBVEFCQVNFX1VSTCIpDQp9DQoNCm1vZGVsIEd1ZXN0IHsNCiAgaWQgICAgICAgICBJbnQgICAgICBAaWQgQGRlZmF1bHQoYXV0b2luY3JlbWVudCgpKQ0KICBuYW1lICAgICAgIFN0cmluZw0KICBpbnN0YW5zaSAgIFN0cmluZw0KICBpbmdyb3VwICAgIFN0cmluZw0KICB2aXNpdG9ycyAgIEludA0KICBwdXJwb3NlICAgIFN0cmluZw0KICB0b19tZWV0ICAgIFN0cmluZw0KICBzY2hlZHVsZWQgIFN0cmluZw0KICBjcmVhdGVkX2F0IERhdGVUaW1lDQogIHVwZGF0ZWRfYXQgRGF0ZVRpbWUNCn0NCg==",
-  "inlineSchemaHash": "71250924c243980cbad099d7ef1646b262e7edd03a03df6ba80d87b2f29cd01d",
+  "inlineSchema": "Ly8gVGhpcyBpcyB5b3VyIFByaXNtYSBzY2hlbWEgZmlsZSwNCi8vIGxlYXJuIG1vcmUgYWJvdXQgaXQgaW4gdGhlIGRvY3M6IGh0dHBzOi8vcHJpcy5seS9kL3ByaXNtYS1zY2hlbWENCg0KZ2VuZXJhdG9yIGNsaWVudCB7DQogIHByb3ZpZGVyID0gInByaXNtYS1jbGllbnQtanMiDQogIG91dHB1dCAgID0gIi4uL3NyYy9jb25maWcvY2xpZW50Ig0KICBiaW5hcnlUYXJnZXRzID0gWyJuYXRpdmUiLCAibGludXgtbXVzbC1vcGVuc3NsLTMuMC54Il0NCn0NCg0KZGF0YXNvdXJjZSBkYiB7DQogIHByb3ZpZGVyID0gInBvc3RncmVzcWwiDQogIHVybCAgICAgID0gZW52KCJEQVRBQkFTRV9VUkwiKQ0KfQ0KDQptb2RlbCBHdWVzdCB7DQogIGlkICAgICAgICAgSW50ICAgICAgQGlkIEBkZWZhdWx0KGF1dG9pbmNyZW1lbnQoKSkNCiAgbmFtZSAgICAgICBTdHJpbmcNCiAgaW5zdGFuc2kgICBTdHJpbmcNCiAgaW5ncm91cCAgICBTdHJpbmcNCiAgdmlzaXRvcnMgICBJbnQNCiAgcHVycG9zZSAgICBTdHJpbmcNCiAgdG9fbWVldCAgICBTdHJpbmcNCiAgc2NoZWR1bGVkICBTdHJpbmcNCiAgY3JlYXRlZF9hdCBEYXRlVGltZQ0KICB1cGRhdGVkX2F0IERhdGVUaW1lDQp9DQo=",
+  "inlineSchemaHash": "4f1327f47a7a8b93fab04209ef64bc2715c56a73cb4f8c574db674065d6db1ab",
   "noEngine": false
 }
 
@@ -202,6 +206,10 @@ Object.assign(exports, Prisma)
 // file annotations for bundling tools to include these files
 path.join(__dirname, "query_engine-windows.dll.node");
 path.join(process.cwd(), "src/config/client/query_engine-windows.dll.node")
+
+// file annotations for bundling tools to include these files
+path.join(__dirname, "libquery_engine-linux-musl-openssl-3.0.x.so.node");
+path.join(process.cwd(), "src/config/client/libquery_engine-linux-musl-openssl-3.0.x.so.node")
 // file annotations for bundling tools to include these files
 path.join(__dirname, "schema.prisma");
 path.join(process.cwd(), "src/config/client/schema.prisma")
