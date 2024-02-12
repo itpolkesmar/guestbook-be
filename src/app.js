@@ -16,17 +16,17 @@ const cors = pkg;
 
 app.use(morgan("dev"));
 
-var corsOptions = {
-  origin: "https://guestbook-fe.vercel.app",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"],
-  credentials: true,
-};
-
+// var corsOptions = {
+//   origin: "*",
+//   methods: ["GET", "POST", "PUT", "DELETE"],
+//   allowedHeaders: ["Content-Type"],
+//   optionsSuccessStatus: 200,
+// };
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.json());
-app.use("/", route, cors(corsOptions));
+app.use("/", route);
 // Handle errors.
 app.use(function (err, req, res, next) {
   res.status(err.status || 500);
