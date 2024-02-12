@@ -13,3 +13,4 @@ router.use("/admin", passport.authenticate("jwt", { session: false }), admin);
 router.use('/login', login)
 
 export default router
+    
