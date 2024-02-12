@@ -19,8 +19,8 @@ app.use(morgan("dev"));
 var corsOptions = {
   origin: "*",
   methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type","Access-Control-Allow-Origin: https://guestbook-fe.vercel.app"],
-  optionsSuccessStatus: 200,
+  allowedHeaders: ["Content-Type", "Authorization"],
+  credentials: true,
 };
 app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
