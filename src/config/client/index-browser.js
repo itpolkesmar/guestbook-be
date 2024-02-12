@@ -120,6 +120,16 @@ exports.Prisma.GuestScalarFieldEnum = {
   updated_at: 'updated_at'
 };
 
+exports.Prisma.UserScalarFieldEnum = {
+  id: 'id',
+  email: 'email',
+  password: 'password',
+  name: 'name',
+  gedung: 'gedung',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+};
+
 exports.Prisma.SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -132,7 +142,8 @@ exports.Prisma.QueryMode = {
 
 
 exports.Prisma.ModelName = {
-  Guest: 'Guest'
+  Guest: 'Guest',
+  User: 'User'
 };
 
 /**
