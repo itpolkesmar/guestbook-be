@@ -22,11 +22,11 @@ var corsOptions = {
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
 };
-app.use(cors(corsOptions));
+
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.json());
-app.use("/", route);
+app.use("/", route, cors(corsOptions));
 // Handle errors.
 app.use(function (err, req, res, next) {
   res.status(err.status || 500);
