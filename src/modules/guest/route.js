@@ -6,9 +6,6 @@ import controller from "./controller.js"
 
 const router = express.Router()
 
-router.post('/addGuest', controller.addGuest)
-router.get('/getGuest', controller.getGuest)
-router.get('/getGuest/:id', controller.getGuestById)
-router.delete('/delGuest/:id', controller.deleteGuestById)
+router.post('/addGuest', controller.addGuest)   // addGuest
 
 export default router

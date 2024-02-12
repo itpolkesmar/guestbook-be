@@ -5,9 +5,12 @@ import express from "express";
 import pkg from "cors";
 import morgan from "morgan";
 import route from "./index.js";
-import 'dotenv/config'
+import passport from "passport";
+import bodyParser from "body-parser";
+import "dotenv/config";
+import "./modules/auth/auth.js";
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 5000;
 const app = express();
 const cors = pkg;
 
@@ -20,14 +23,19 @@ var corsOptions = {
   optionsSuccessStatus: 200,
 };
 app.use(cors(corsOptions));
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.json());
 app.use("/", route);
+// Handle errors.
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500);
+  res.json({ error: err });
+});
+
 app.get("/", async (req, res) => {
   res.send("ngapain kau hah?");
 });
-
 
 app.listen(port, () =>
   console.log(`
