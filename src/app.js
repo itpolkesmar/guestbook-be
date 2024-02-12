@@ -17,7 +17,7 @@ const cors = pkg;
 app.use(morgan("dev"));
 
 var corsOptions = {
-  origin: "*",
+  origin: "https://guestbook-fe.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true,
