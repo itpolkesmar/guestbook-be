@@ -17,10 +17,10 @@ class controller {
         }
         req.login(user, { session: false }, async (error) => {
           if (error) return next(error);
-          const body = { _id: user.id, email: user.email };
+          const body = { _id: user.id, email: user.email, name:user.name, gedung:user.gedung };
 
           const token = jwt.sign({ user: body }, process.env.KEY);
-          return res.json(token);
+          return res.json({token});
         });
       } catch (error) {
         return next(error);
