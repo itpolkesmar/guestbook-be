@@ -16,7 +16,12 @@ const cors = pkg;
 
 app.use(morgan("dev"));
 
-app.use(cors());
+var corsOptions = {
+  origin: 'https://guestbook-fe.vercel.app',
+  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
+}
+
+app.use(cors(corsOptions));
 app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use(express.json());
