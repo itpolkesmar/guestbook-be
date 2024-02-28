@@ -111,8 +111,6 @@ exports.Prisma.GuestScalarFieldEnum = {
   id: 'id',
   name: 'name',
   instansi: 'instansi',
-  ingroup: 'ingroup',
-  visitors: 'visitors',
   purpose: 'purpose',
   to_meet: 'to_meet',
   scheduled: 'scheduled',

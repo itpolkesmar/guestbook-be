@@ -3,7 +3,7 @@ import prisma from "../../config/conn.js";
 
 class controller {
   static async addGuest(req, res, next) {
-    const { name, instansi, ingroup, visitors, purpose, to_meet, scheduled } =
+    const { name, instansi, purpose, to_meet, scheduled } =
       req.body;
 
     const id = nanoid(16);
@@ -15,8 +15,6 @@ class controller {
         id,
         name,
         instansi,
-        ingroup,
-        visitors,
         purpose,
         to_meet,
         scheduled,

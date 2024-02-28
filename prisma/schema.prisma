@@ -16,8 +16,6 @@ model Guest {
   id         String      @id
   name       String
   instansi   String
-  ingroup    String
-  visitors   Int
   purpose    String
   to_meet    String
   scheduled  String

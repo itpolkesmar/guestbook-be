@@ -944,26 +944,14 @@ export namespace Prisma {
 
   export type AggregateGuest = {
     _count: GuestCountAggregateOutputType | null
-    _avg: GuestAvgAggregateOutputType | null
-    _sum: GuestSumAggregateOutputType | null
     _min: GuestMinAggregateOutputType | null
     _max: GuestMaxAggregateOutputType | null
-  }
-
-  export type GuestAvgAggregateOutputType = {
-    visitors: number | null
-  }
-
-  export type GuestSumAggregateOutputType = {
-    visitors: number | null
   }
 
   export type GuestMinAggregateOutputType = {
     id: string | null
     name: string | null
     instansi: string | null
-    ingroup: string | null
-    visitors: number | null
     purpose: string | null
     to_meet: string | null
     scheduled: string | null
@@ -975,8 +963,6 @@ export namespace Prisma {
     id: string | null
     name: string | null
     instansi: string | null
-    ingroup: string | null
-    visitors: number | null
     purpose: string | null
     to_meet: string | null
     scheduled: string | null
@@ -988,8 +974,6 @@ export namespace Prisma {
     id: number
     name: number
     instansi: number
-    ingroup: number
-    visitors: number
     purpose: number
     to_meet: number
     scheduled: number
@@ -999,20 +983,10 @@ export namespace Prisma {
   }
 
 
-  export type GuestAvgAggregateInputType = {
-    visitors?: true
-  }
-
-  export type GuestSumAggregateInputType = {
-    visitors?: true
-  }
-
   export type GuestMinAggregateInputType = {
     id?: true
     name?: true
     instansi?: true
-    ingroup?: true
-    visitors?: true
     purpose?: true
     to_meet?: true
     scheduled?: true
@@ -1024,8 +998,6 @@ export namespace Prisma {
     id?: true
     name?: true
     instansi?: true
-    ingroup?: true
-    visitors?: true
     purpose?: true
     to_meet?: true
     scheduled?: true
@@ -1037,8 +1009,6 @@ export namespace Prisma {
     id?: true
     name?: true
     instansi?: true
-    ingroup?: true
-    visitors?: true
     purpose?: true
     to_meet?: true
     scheduled?: true
@@ -1085,18 +1055,6 @@ export namespace Prisma {
     /**
      * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
      * 
-     * Select which fields to average
-    **/
-    _avg?: GuestAvgAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
-     * Select which fields to sum
-    **/
-    _sum?: GuestSumAggregateInputType
-    /**
-     * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
-     * 
      * Select which fields to find the minimum value
     **/
     _min?: GuestMinAggregateInputType
@@ -1127,8 +1085,6 @@ export namespace Prisma {
     take?: number
     skip?: number
     _count?: GuestCountAggregateInputType | true
-    _avg?: GuestAvgAggregateInputType
-    _sum?: GuestSumAggregateInputType
     _min?: GuestMinAggregateInputType
     _max?: GuestMaxAggregateInputType
   }
@@ -1137,16 +1093,12 @@ export namespace Prisma {
     id: string
     name: string
     instansi: string
-    ingroup: string
-    visitors: number
     purpose: string
     to_meet: string
     scheduled: string
     created_at: Date
     updated_at: Date
     _count: GuestCountAggregateOutputType | null
-    _avg: GuestAvgAggregateOutputType | null
-    _sum: GuestSumAggregateOutputType | null
     _min: GuestMinAggregateOutputType | null
     _max: GuestMaxAggregateOutputType | null
   }
@@ -1169,8 +1121,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     instansi?: boolean
-    ingroup?: boolean
-    visitors?: boolean
     purpose?: boolean
     to_meet?: boolean
     scheduled?: boolean
@@ -1182,8 +1132,6 @@ export namespace Prisma {
     id?: boolean
     name?: boolean
     instansi?: boolean
-    ingroup?: boolean
-    visitors?: boolean
     purpose?: boolean
     to_meet?: boolean
     scheduled?: boolean
@@ -1199,8 +1147,6 @@ export namespace Prisma {
       id: string
       name: string
       instansi: string
-      ingroup: string
-      visitors: number
       purpose: string
       to_meet: string
       scheduled: string
@@ -1603,8 +1549,6 @@ export namespace Prisma {
     readonly id: FieldRef<"Guest", 'String'>
     readonly name: FieldRef<"Guest", 'String'>
     readonly instansi: FieldRef<"Guest", 'String'>
-    readonly ingroup: FieldRef<"Guest", 'String'>
-    readonly visitors: FieldRef<"Guest", 'Int'>
     readonly purpose: FieldRef<"Guest", 'String'>
     readonly to_meet: FieldRef<"Guest", 'String'>
     readonly scheduled: FieldRef<"Guest", 'String'>
@@ -2807,8 +2751,6 @@ export namespace Prisma {
     id: 'id',
     name: 'name',
     instansi: 'instansi',
-    ingroup: 'ingroup',
-    visitors: 'visitors',
     purpose: 'purpose',
     to_meet: 'to_meet',
     scheduled: 'scheduled',
@@ -2868,20 +2810,6 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Int'
-   */
-  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
-    
-
-
-  /**
-   * Reference to a field of type 'Int[]'
-   */
-  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
-    
-
-
-  /**
    * Reference to a field of type 'DateTime'
    */
   export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
@@ -2896,16 +2824,16 @@ export namespace Prisma {
 
 
   /**
-   * Reference to a field of type 'Float'
+   * Reference to a field of type 'Int'
    */
-  export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float'>
+  export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
     
 
 
   /**
-   * Reference to a field of type 'Float[]'
+   * Reference to a field of type 'Int[]'
    */
-  export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
+  export type ListIntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int[]'>
     
   /**
    * Deep Input Types
@@ -2919,8 +2847,6 @@ export namespace Prisma {
     id?: StringFilter<"Guest"> | string
     name?: StringFilter<"Guest"> | string
     instansi?: StringFilter<"Guest"> | string
-    ingroup?: StringFilter<"Guest"> | string
-    visitors?: IntFilter<"Guest"> | number
     purpose?: StringFilter<"Guest"> | string
     to_meet?: StringFilter<"Guest"> | string
     scheduled?: StringFilter<"Guest"> | string
@@ -2932,8 +2858,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     instansi?: SortOrder
-    ingroup?: SortOrder
-    visitors?: SortOrder
     purpose?: SortOrder
     to_meet?: SortOrder
     scheduled?: SortOrder
@@ -2948,8 +2872,6 @@ export namespace Prisma {
     NOT?: GuestWhereInput | GuestWhereInput[]
     name?: StringFilter<"Guest"> | string
     instansi?: StringFilter<"Guest"> | string
-    ingroup?: StringFilter<"Guest"> | string
-    visitors?: IntFilter<"Guest"> | number
     purpose?: StringFilter<"Guest"> | string
     to_meet?: StringFilter<"Guest"> | string
     scheduled?: StringFilter<"Guest"> | string
@@ -2961,18 +2883,14 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     instansi?: SortOrder
-    ingroup?: SortOrder
-    visitors?: SortOrder
     purpose?: SortOrder
     to_meet?: SortOrder
     scheduled?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
     _count?: GuestCountOrderByAggregateInput
-    _avg?: GuestAvgOrderByAggregateInput
     _max?: GuestMaxOrderByAggregateInput
     _min?: GuestMinOrderByAggregateInput
-    _sum?: GuestSumOrderByAggregateInput
   }
 
   export type GuestScalarWhereWithAggregatesInput = {
@@ -2982,8 +2900,6 @@ export namespace Prisma {
     id?: StringWithAggregatesFilter<"Guest"> | string
     name?: StringWithAggregatesFilter<"Guest"> | string
     instansi?: StringWithAggregatesFilter<"Guest"> | string
-    ingroup?: StringWithAggregatesFilter<"Guest"> | string
-    visitors?: IntWithAggregatesFilter<"Guest"> | number
     purpose?: StringWithAggregatesFilter<"Guest"> | string
     to_meet?: StringWithAggregatesFilter<"Guest"> | string
     scheduled?: StringWithAggregatesFilter<"Guest"> | string
@@ -3057,8 +2973,6 @@ export namespace Prisma {
     id: string
     name: string
     instansi: string
-    ingroup: string
-    visitors: number
     purpose: string
     to_meet: string
     scheduled: string
@@ -3070,8 +2984,6 @@ export namespace Prisma {
     id: string
     name: string
     instansi: string
-    ingroup: string
-    visitors: number
     purpose: string
     to_meet: string
     scheduled: string
@@ -3083,8 +2995,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     instansi?: StringFieldUpdateOperationsInput | string
-    ingroup?: StringFieldUpdateOperationsInput | string
-    visitors?: IntFieldUpdateOperationsInput | number
     purpose?: StringFieldUpdateOperationsInput | string
     to_meet?: StringFieldUpdateOperationsInput | string
     scheduled?: StringFieldUpdateOperationsInput | string
@@ -3096,8 +3006,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     instansi?: StringFieldUpdateOperationsInput | string
-    ingroup?: StringFieldUpdateOperationsInput | string
-    visitors?: IntFieldUpdateOperationsInput | number
     purpose?: StringFieldUpdateOperationsInput | string
     to_meet?: StringFieldUpdateOperationsInput | string
     scheduled?: StringFieldUpdateOperationsInput | string
@@ -3109,8 +3017,6 @@ export namespace Prisma {
     id: string
     name: string
     instansi: string
-    ingroup: string
-    visitors: number
     purpose: string
     to_meet: string
     scheduled: string
@@ -3122,8 +3028,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     instansi?: StringFieldUpdateOperationsInput | string
-    ingroup?: StringFieldUpdateOperationsInput | string
-    visitors?: IntFieldUpdateOperationsInput | number
     purpose?: StringFieldUpdateOperationsInput | string
     to_meet?: StringFieldUpdateOperationsInput | string
     scheduled?: StringFieldUpdateOperationsInput | string
@@ -3135,8 +3039,6 @@ export namespace Prisma {
     id?: StringFieldUpdateOperationsInput | string
     name?: StringFieldUpdateOperationsInput | string
     instansi?: StringFieldUpdateOperationsInput | string
-    ingroup?: StringFieldUpdateOperationsInput | string
-    visitors?: IntFieldUpdateOperationsInput | number
     purpose?: StringFieldUpdateOperationsInput | string
     to_meet?: StringFieldUpdateOperationsInput | string
     scheduled?: StringFieldUpdateOperationsInput | string
@@ -3229,17 +3131,6 @@ export namespace Prisma {
     not?: NestedStringFilter<$PrismaModel> | string
   }
 
-  export type IntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
-  }
-
   export type DateTimeFilter<$PrismaModel = never> = {
     equals?: Date | string | DateTimeFieldRefInput<$PrismaModel>
     in?: Date[] | string[] | ListDateTimeFieldRefInput<$PrismaModel>
@@ -3255,8 +3146,6 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     instansi?: SortOrder
-    ingroup?: SortOrder
-    visitors?: SortOrder
     purpose?: SortOrder
     to_meet?: SortOrder
     scheduled?: SortOrder
@@ -3264,16 +3153,10 @@ export namespace Prisma {
     updated_at?: SortOrder
   }
 
-  export type GuestAvgOrderByAggregateInput = {
-    visitors?: SortOrder
-  }
-
   export type GuestMaxOrderByAggregateInput = {
     id?: SortOrder
     name?: SortOrder
     instansi?: SortOrder
-    ingroup?: SortOrder
-    visitors?: SortOrder
     purpose?: SortOrder
     to_meet?: SortOrder
     scheduled?: SortOrder
@@ -3285,17 +3168,11 @@ export namespace Prisma {
     id?: SortOrder
     name?: SortOrder
     instansi?: SortOrder
-    ingroup?: SortOrder
-    visitors?: SortOrder
     purpose?: SortOrder
     to_meet?: SortOrder
     scheduled?: SortOrder
     created_at?: SortOrder
     updated_at?: SortOrder
-  }
-
-  export type GuestSumOrderByAggregateInput = {
-    visitors?: SortOrder
   }
 
   export type StringWithAggregatesFilter<$PrismaModel = never> = {
@@ -3314,22 +3191,6 @@ export namespace Prisma {
     _count?: NestedIntFilter<$PrismaModel>
     _min?: NestedStringFilter<$PrismaModel>
     _max?: NestedStringFilter<$PrismaModel>
-  }
-
-  export type IntWithAggregatesFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
   }
 
   export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
@@ -3380,14 +3241,6 @@ export namespace Prisma {
     set?: string
   }
 
-  export type IntFieldUpdateOperationsInput = {
-    set?: number
-    increment?: number
-    decrement?: number
-    multiply?: number
-    divide?: number
-  }
-
   export type DateTimeFieldUpdateOperationsInput = {
     set?: Date | string
   }
@@ -3404,17 +3257,6 @@ export namespace Prisma {
     startsWith?: string | StringFieldRefInput<$PrismaModel>
     endsWith?: string | StringFieldRefInput<$PrismaModel>
     not?: NestedStringFilter<$PrismaModel> | string
-  }
-
-  export type NestedIntFilter<$PrismaModel = never> = {
-    equals?: number | IntFieldRefInput<$PrismaModel>
-    in?: number[] | ListIntFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
-    lt?: number | IntFieldRefInput<$PrismaModel>
-    lte?: number | IntFieldRefInput<$PrismaModel>
-    gt?: number | IntFieldRefInput<$PrismaModel>
-    gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedDateTimeFilter<$PrismaModel = never> = {
@@ -3445,7 +3287,7 @@ export namespace Prisma {
     _max?: NestedStringFilter<$PrismaModel>
   }
 
-  export type NestedIntWithAggregatesFilter<$PrismaModel = never> = {
+  export type NestedIntFilter<$PrismaModel = never> = {
     equals?: number | IntFieldRefInput<$PrismaModel>
     in?: number[] | ListIntFieldRefInput<$PrismaModel>
     notIn?: number[] | ListIntFieldRefInput<$PrismaModel>
@@ -3453,23 +3295,7 @@ export namespace Prisma {
     lte?: number | IntFieldRefInput<$PrismaModel>
     gt?: number | IntFieldRefInput<$PrismaModel>
     gte?: number | IntFieldRefInput<$PrismaModel>
-    not?: NestedIntWithAggregatesFilter<$PrismaModel> | number
-    _count?: NestedIntFilter<$PrismaModel>
-    _avg?: NestedFloatFilter<$PrismaModel>
-    _sum?: NestedIntFilter<$PrismaModel>
-    _min?: NestedIntFilter<$PrismaModel>
-    _max?: NestedIntFilter<$PrismaModel>
-  }
-
-  export type NestedFloatFilter<$PrismaModel = never> = {
-    equals?: number | FloatFieldRefInput<$PrismaModel>
-    in?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    notIn?: number[] | ListFloatFieldRefInput<$PrismaModel>
-    lt?: number | FloatFieldRefInput<$PrismaModel>
-    lte?: number | FloatFieldRefInput<$PrismaModel>
-    gt?: number | FloatFieldRefInput<$PrismaModel>
-    gte?: number | FloatFieldRefInput<$PrismaModel>
-    not?: NestedFloatFilter<$PrismaModel> | number
+    not?: NestedIntFilter<$PrismaModel> | number
   }
 
   export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
