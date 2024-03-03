@@ -66,7 +66,6 @@ class controller {
         res.status(201).json({
           message: result,
           user: req.user,
-          //   token: req.query.secret_token,
         });
       }
     } catch (error) {
